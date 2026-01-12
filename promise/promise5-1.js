@@ -1,3 +1,5 @@
+"use strict";
+
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 async function* createPaginator(fetchPage) {
@@ -19,8 +21,6 @@ const mockFetch = async (page) => {
     hasMore: page < 3,
   };
 };
-
-const paginator = createPaginator(mockFetch);
 
 async function start() {
   const paginator = createPaginator(mockFetch);
