@@ -11,7 +11,7 @@ function createEventEmitter() {
     },
 
     emit(event, ...args) {
-      events[event]?.(args);
+      events[event]?.events[event](args);
     },
 
     once(event, callback) {
